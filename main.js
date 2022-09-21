@@ -1,11 +1,12 @@
 var $car = document.querySelector('.racecar');
-
+var timer = null;
 var carModel = {
   direction: 'right',
   location: {
     xCoordinate: 0,
     yCoordinate: 0
-  }
+  },
+  carMoving: false
 };
 
 window.addEventListener('keydown', changeDirection);
@@ -28,8 +29,13 @@ function changeDirection(event) {
   $car.className = 'racecar ' + carModel.direction;
 
   if (event.code === 'Space') {
-    setInterval(moveCar, 16);
-
+    if (carModel.carMoving === false) {
+      timer = setInterval(moveCar, 16);
+      carModel.carMoving = true;
+    } else {
+      clearInterval(timer);
+      carModel.carMoving = false;
+    }
   }
 }
 

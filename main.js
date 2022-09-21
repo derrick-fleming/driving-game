@@ -1,7 +1,11 @@
 var $car = document.querySelector('.racecar');
 
 var carModel = {
-  direction: 'right'
+  direction: 'right',
+  location: {
+    xCoordinate: 0,
+    yCoordinate: 0
+  }
 };
 
 window.addEventListener('keydown', changeDirection);

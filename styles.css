@@ -1,5 +1,6 @@
 body {
   background-color: #bfb7b0;
+  box-sizing: border-box;
 }
 
 img {

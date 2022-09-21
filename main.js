@@ -31,9 +31,10 @@ function changeDirection(event) {
     setInterval(moveCar, 16);
 
   }
-
 }
 
 function moveCar() {
-  carModel.location.xCoordinate = carModel.location.xCoordinate + 1;
+  carModel.location.xCoordinate = carModel.location.xCoordinate + 100;
+  var x = carModel.location.xCoordinate;
+  $car.setAttribute('style', 'left:' + x + 'px ');
 }

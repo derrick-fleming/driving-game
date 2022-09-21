@@ -25,7 +25,15 @@ function changeDirection(event) {
   if (event.code === 'ArrowDown') {
     carModel.direction = 'down';
   }
-
   $car.className = 'racecar ' + carModel.direction;
 
+  if (event.code === 'Space') {
+    setInterval(moveCar, 16);
+
+  }
+
+}
+
+function moveCar() {
+  carModel.location.xCoordinate = carModel.location.xCoordinate + 1;
 }

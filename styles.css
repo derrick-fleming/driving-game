@@ -1,5 +1,14 @@
 body {
   background-color: #bfb7b0;
+  box-sizing: border-box;
+}
+
+.carbox {
+  position: relative;
+}
+
+img {
+  position: absolute;
 }
 
 .racecar {

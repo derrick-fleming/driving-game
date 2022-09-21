@@ -40,7 +40,24 @@ function changeDirection(event) {
 }
 
 function moveCar() {
-  carModel.location.xCoordinate = carModel.location.xCoordinate + 10;
   var x = carModel.location.xCoordinate;
-  $car.setAttribute('style', 'left:' + x + 'px');
+  var y = carModel.location.yCoordinate;
+
+  if (carModel.direction === 'right') {
+    carModel.location.xCoordinate = carModel.location.xCoordinate + 10;
+  }
+
+  if (carModel.direction === 'left') {
+    carModel.location.xCoordinate = carModel.location.xCoordinate - 10;
+  }
+
+  if (carModel.direction === 'up') {
+    carModel.location.yCoordinate = carModel.location.yCoordinate - 10;
+  }
+
+  if (carModel.direction === 'down') {
+    carModel.location.yCoordinate = carModel.location.yCoordinate + 10;
+  }
+
+  $car.setAttribute('style', 'left:' + x + 'px;' + 'top:' + y + 'px;');
 }

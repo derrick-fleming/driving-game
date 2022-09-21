@@ -13,11 +13,15 @@ function changeDirection(event) {
   if (event.code === 'ArrowRight') {
     carModel.direction = 'right';
   }
+
   if (event.code === 'ArrowUp') {
     carModel.direction = 'up';
   }
+
   if (event.code === 'ArrowDown') {
     carModel.direction = 'down';
   }
+
   $car.className = 'racecar ' + carModel.direction;
+
 }

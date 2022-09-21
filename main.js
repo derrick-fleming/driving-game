@@ -34,7 +34,7 @@ function changeDirection(event) {
 }
 
 function moveCar() {
-  carModel.location.xCoordinate = carModel.location.xCoordinate + 100;
+  carModel.location.xCoordinate = carModel.location.xCoordinate + 10;
   var x = carModel.location.xCoordinate;
-  $car.setAttribute('style', 'left:' + x + 'px ');
+  $car.setAttribute('style', 'left:' + x + 'px');
 }

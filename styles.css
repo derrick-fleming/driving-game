@@ -19,12 +19,10 @@ h1 {
 
 .racecar-2 {
   width: 45%;
-  color: blue;
 }
 
 .racecar-2:hover {
   transform: scale(1.2);
-  transform: rotate();
 }
 
 .racecar {
@@ -50,4 +48,16 @@ h1 {
 .left {
   transform: rotate(180deg);
   transition: transform 0.2s;
+}
+
+.sky {
+  background-color: #bde3f2;
+}
+
+.space {
+  background-color: #1e2d40;
+}
+
+.ocean {
+  background-color: #60a6a6;
 }

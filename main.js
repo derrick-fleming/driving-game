@@ -1,5 +1,6 @@
 var $chooseContainer = document.querySelector('.choose-container');
 var $hiddenCar = document.querySelectorAll('.racecar.hidden');
+var $body = document.querySelector('body');
 var $car = null;
 var timer = null;
 var carModel = {
@@ -22,6 +23,16 @@ function selectCar(event) {
     }
   }
   $chooseContainer.className = 'hidden';
+  if ($closest.dataset.id === 'plane') {
+    $body.className = 'sky';
+  }
+  if ($closest.dataset.id === 'ship') {
+    $body.className = 'space';
+  }
+
+  if ($closest.dataset.id === 'dinghy') {
+    $body.className = 'ocean';
+  }
   return $car;
 }
 window.addEventListener('keydown', changeDirection);

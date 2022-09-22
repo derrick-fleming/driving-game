@@ -1,3 +1,4 @@
+var $chooseContainer = document.querySelector('.choose-container');
 var $car = document.querySelector('.racecar');
 var timer = null;
 var carModel = {
@@ -8,6 +9,12 @@ var carModel = {
   },
   carMoving: false
 };
+
+$chooseContainer.addEventListener('click', selectCar);
+
+function selectCar(event) {
+  return event.target;
+}
 
 window.addEventListener('keydown', changeDirection);
 

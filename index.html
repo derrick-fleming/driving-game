@@ -5,11 +5,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Driving Game</title>
+  <link href="layout.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="carbox">
-    <img style="left:0" src="images/f1.svg" alt="car" class="racecar">
+    <img data-id="car" style="left:0" src="images/f1.svg" alt="car" class="racecar hidden">
+    <img data-id="ship" style="left:0" src="images/tiefighter.png" alt="car" class="racecar hidden">
+    <img data-id="space" style="left:0" src="images/plane.png" alt="car" class="racecar hidden">
+    <img data-id="space" style="left:0" src="images/dinghy.png" alt="car" class="racecar hidden">
+
+  </div>
+  <div class="intro">
+    <h1>Choose your vehicle</h1>
+  </div>
+  <div class="row">
+    <div class="column-quarter">
+      <img data-id="car" style="left:0" src="images/f1.svg" alt="car" class="racecar-2">
+    </div>
+    <div class="column-quarter">
+      <img data-id="ship" style="left:0" src="images/tiefighter.png" alt="car" class="racecar-2">
+    </div>
+    <div class="column-quarter">
+      <img data-id="plane" style="left:0" src="images/plane.png" alt="car" class="racecar-2">
+    </div>
+    <div class="column-quarter">
+      <img data-id="dinghy" style="left:0" src="images/dinghy.png" alt="car" class="racecar-2">
+    </div>
   </div>
   <script src="main.js"></script>
 </body>

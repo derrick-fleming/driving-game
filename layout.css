@@ -1,0 +1,8 @@
+.row {
+  display: flex;
+}
+
+.column-quarter {
+  flex-basis: 25%;
+  text-align: center;
+}

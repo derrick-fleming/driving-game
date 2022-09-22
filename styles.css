@@ -3,16 +3,33 @@ body {
   box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+  font-family: "Fira Code", monospace;
+  margin-bottom: 4rem;
+}
+
+.hidden {
+  display: none;
+}
+
 .carbox {
   position: relative;
 }
 
-img {
-  position: absolute;
+.racecar-2 {
+  width: 45%;
+  color: blue;
+}
+
+.racecar-2:hover {
+  transform: scale(1.2);
+  transform: rotate();
 }
 
 .racecar {
   width: 15%;
+  position: absolute;
 }
 
 .up {

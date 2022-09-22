@@ -1,5 +1,6 @@
 var $chooseContainer = document.querySelector('.choose-container');
-var $car = document.querySelector('.racecar');
+var $hiddenCar = document.querySelectorAll('.racecar.hidden');
+var $car = null;
 var timer = null;
 var carModel = {
   direction: 'right',
@@ -13,9 +14,16 @@ var carModel = {
 $chooseContainer.addEventListener('click', selectCar);
 
 function selectCar(event) {
-  return event.target;
+  var $closest = event.target.closest('IMG');
+  for (var i = 0; i < $hiddenCar.length; i++) {
+    if ($closest.dataset.id === $hiddenCar[i].dataset.id) {
+      $hiddenCar[i].className = 'racecar';
+      $car = $hiddenCar[i];
+    }
+  }
+  $chooseContainer.className = 'hidden';
+  return $car;
 }
-
 window.addEventListener('keydown', changeDirection);
 
 function changeDirection(event) {

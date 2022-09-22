@@ -6,3 +6,7 @@
   flex-basis: 25%;
   text-align: center;
 }
+
+.column-full {
+  flex-basis: 100%;
+}

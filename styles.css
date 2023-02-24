@@ -22,7 +22,7 @@ h1 {
 }
 
 .racecar-2:hover {
-  transform: scale(1.2);
+  animation: 5s infinite rotate-ship linear;
 }
 
 .racecar {
@@ -60,4 +60,32 @@ h1 {
 
 .ocean {
   background-color: #60a6a6;
+}
+
+@keyframes rotate-ship {
+  0% {
+    transform: scale(1.2) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.2) rotate(360deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+
+  75% {
+    transform: scale(1.2) rotate(360deg);
+  }
+
+  100% {
+    transform: scale(1.2) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .racecar-2:hover {
+    transform: scale(1.2);
+  }
 }

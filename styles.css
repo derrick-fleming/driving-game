@@ -3,16 +3,31 @@ body {
   box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+  font-family: "Fira Code", monospace;
+  margin-bottom: 4rem;
+}
+
+.hidden {
+  display: none;
+}
+
 .carbox {
   position: relative;
 }
 
-img {
-  position: absolute;
+.racecar-2 {
+  width: 45%;
+}
+
+.racecar-2:hover {
+  animation: 5s infinite rotate-ship linear;
 }
 
 .racecar {
-  width: 15%;
+  width: 11%;
+  position: absolute;
 }
 
 .up {
@@ -33,4 +48,44 @@ img {
 .left {
   transform: rotate(180deg);
   transition: transform 0.2s;
+}
+
+.sky {
+  background-color: #bde3f2;
+}
+
+.space {
+  background-color: #1e2d40;
+}
+
+.ocean {
+  background-color: #60a6a6;
+}
+
+@keyframes rotate-ship {
+  0% {
+    transform: scale(1.2) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.2) rotate(360deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+
+  75% {
+    transform: scale(1.2) rotate(360deg);
+  }
+
+  100% {
+    transform: scale(1.2) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .racecar-2:hover {
+    transform: scale(1.2);
+  }
 }

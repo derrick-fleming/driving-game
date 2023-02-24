@@ -1,8 +1,8 @@
 const $chooseContainer: HTMLDivElement = document.querySelector('.choose-container');
 const $hiddenCar: NodeListOf<Element> = document.querySelectorAll('.racecar.hidden');
 const $body = document.querySelector('body');
-let $car = null;
-let timer = null;
+let $car: HTMLElement;
+let timer: any;
 const carModel = {
   direction: 'right',
   location: {
@@ -14,16 +14,12 @@ const carModel = {
 
 $chooseContainer.addEventListener('click', selectCar);
 
-type data = {
-  'data-id': string;
-}
-
 function selectCar(event: MouseEvent) {
   const $closest: HTMLElement = (event.target as HTMLElement).closest('IMG');
-  for (var i = 0; i < $hiddenCar.length; i++) {
+  for (let i = 0; i < $hiddenCar.length; i++) {
     if ($closest.dataset.id === ($hiddenCar[i] as HTMLElement).dataset.id) {
       $hiddenCar[i].className = 'racecar';
-      $car = $hiddenCar[i];
+      $car = $hiddenCar[i] as HTMLElement;
     }
   }
   $chooseContainer.className = 'hidden';
@@ -70,8 +66,8 @@ function changeDirection(event: KeyboardEvent) {
 }
 
 function moveCar() {
-  var x = carModel.location.xCoordinate;
-  var y = carModel.location.yCoordinate;
+  const x = carModel.location.xCoordinate;
+  const y = carModel.location.yCoordinate;
 
   if (carModel.direction === 'right') {
     carModel.location.xCoordinate = carModel.location.xCoordinate + 10;

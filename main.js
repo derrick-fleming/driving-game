@@ -1,5 +1,6 @@
 const $chooseContainer = document.querySelector('.choose-container');
 const $hiddenCar = document.querySelectorAll('.racecar.hidden');
+const $carContainer = document.querySelector('.carbox.hidden');
 const $body = document.querySelector('body');
 let $car;
 let timer;
@@ -13,6 +14,8 @@ const carModel = {
 };
 $chooseContainer.addEventListener('click', selectCar);
 function selectCar(event) {
+    if (event.target.tagName !== 'IMG')
+        return;
     const $closest = event.target.closest('IMG');
     for (let i = 0; i < $hiddenCar.length; i++) {
         if ($closest.dataset.id === $hiddenCar[i].dataset.id) {
@@ -21,6 +24,7 @@ function selectCar(event) {
         }
     }
     $chooseContainer.className = 'hidden';
+    $carContainer.className = 'carbox';
     if ($closest.dataset.id === 'plane') {
         $body.className = 'sky';
     }
@@ -30,7 +34,23 @@ function selectCar(event) {
     if ($closest.dataset.id === 'dinghy') {
         $body.className = 'ocean';
     }
-    return $car;
+}
+$body.addEventListener('click', changeScreen);
+function changeScreen(event) {
+    if (event.target.tagName !== 'BUTTON') {
+        return;
+    }
+    $hiddenCar.forEach(element => {
+        element.setAttribute('style', 'left: 0px;' + 'top: 0px;');
+        element.className = 'racecar hidden';
+    });
+    carModel.location = { xCoordinate: 0, yCoordinate: 0 };
+    carModel.carMoving = false;
+    carModel.direction = 'right';
+    $chooseContainer.className = 'choose-container';
+    $carContainer.className = 'carbox hidden';
+    $body.className = '';
+    clearInterval(timer);
 }
 window.addEventListener('keydown', changeDirection);
 function changeDirection(event) {

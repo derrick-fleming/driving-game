@@ -9,6 +9,22 @@ h1 {
   margin-bottom: 4rem;
 }
 
+button {
+  background: #fff;
+  font-size: 1.4rem;
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #000;
+  font-family: "Fira Code", monospace;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #fff6e3;
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
@@ -18,16 +34,19 @@ h1 {
 }
 
 .racecar-2 {
-  width: 45%;
+  width: 175px;
 }
 
 .racecar-2:hover {
   animation: 5s infinite rotate-ship linear;
+  cursor: pointer;
 }
 
 .racecar {
   width: 100px;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .up {
@@ -62,6 +81,11 @@ h1 {
   background-color: #60a6a6;
 }
 
+.button-div {
+  text-align: right;
+  margin: 1rem;
+}
+
 @keyframes rotate-ship {
   0% {
     transform: scale(1.2) rotate(0deg);
@@ -87,5 +111,11 @@ h1 {
 @media (prefers-reduced-motion) {
   .racecar-2:hover {
     transform: scale(1.2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .racecar-2 {
+    width: 75px;
   }
 }

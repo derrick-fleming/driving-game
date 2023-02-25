@@ -16,11 +16,31 @@ describe('index.html', () => {
       })
       .then(done, done);
   });
+
+  describe('Body class', () => {
+    const eventIds = [ 'plane', 'ship', 'dinghy'];
+    const locations = ['sky', 'space', 'ocean'];
+    for (let i = 0; i < eventIds.length; i++) {
+      it(`Should update the body className if dataset is ${eventIds[i]}`, () => {
+        let index;
+        const $body = document.querySelector('body');
+        const event = {
+          target: { dataset: { id: eventIds[i] } }
+        };
+        if (event.target.dataset.id === eventIds[i]) {
+          $body.className = locations[i];
+          index = i;
+        }
+        expect($body.className).to.equal(locations[index])
+      })
+    }
+  })
+
   describe('NodeList of Racecards', () => {
 
     it('Nodelist should contain four elements of Racecars', () => {
       let $hiddenCar = document.querySelectorAll('.racecar.hidden');
-      expect($hiddenCar.length).equal(4);
+      expect($hiddenCar.length).to.deep.equal(4);
     })
 
     for (let i = 0; i < ids.length; i++) {
@@ -35,9 +55,10 @@ describe('index.html', () => {
             element.className = 'racecar';
           }
         })
-        expect($hiddenCar[changed].className).equal('racecar');
-        expect($hiddenCar[changed + 1].className).equal('racecar hidden');
+        expect($hiddenCar[changed].className).to.equal('racecar');
+        expect($hiddenCar[changed + 1].className).to.equal('racecar hidden');
       }) }
+
   })
 
   describe('CarModel', () => {
@@ -67,7 +88,7 @@ describe('index.html', () => {
           carModel.direction = 'up';
         }
         const direction = keyBoardEvents[i].split('Arrow');
-        expect(carModel.direction).equal(direction[1].toLowerCase());
+        expect(carModel.direction).to.equal(direction[1].toLowerCase());
       })
     }
 

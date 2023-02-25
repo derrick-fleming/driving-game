@@ -33,8 +33,17 @@ function selectCar(event: MouseEvent) {
   if ($closest.dataset.id === 'dinghy') {
     $body.className = 'ocean';
   }
-  return $car;
+
+  const $buttonDiv = document.createElement('div');
+  $buttonDiv.className = 'button-div';
+
+ const $button = document.createElement('button');
+  $button.textContent = 'Return to menu';
+
+  $buttonDiv.appendChild($button);
+  $body.appendChild($buttonDiv);
 }
+
 window.addEventListener('keydown', changeDirection);
 
 function changeDirection(event: KeyboardEvent) {

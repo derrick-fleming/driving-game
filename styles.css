@@ -62,6 +62,20 @@ h1 {
   background-color: #60a6a6;
 }
 
+.button-div {
+  text-align: right;
+  margin: 1rem;
+}
+
+button {
+  background: #fff;
+  font-size: 1.4rem;
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #60a6a6;
+}
+
 @keyframes rotate-ship {
   0% {
     transform: scale(1.2) rotate(0deg);

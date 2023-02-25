@@ -66,10 +66,12 @@ function changeDirection(event: KeyboardEvent) {
 }
 
 function moveCar() {
+  const maxWidth = window.innerWidth -120;
+  const maxHeight = window.innerHeight -120;
   const x = carModel.location.xCoordinate;
   const y = carModel.location.yCoordinate;
 
-  if (carModel.direction === 'right') {
+  if (carModel.direction === 'right' && carModel.location.xCoordinate <= maxWidth) {
     carModel.location.xCoordinate = carModel.location.xCoordinate + 10;
   }
 
@@ -81,8 +83,22 @@ function moveCar() {
     carModel.location.yCoordinate = carModel.location.yCoordinate - 10;
   }
 
-  if (carModel.direction === 'down') {
+  if (carModel.direction === 'down' && carModel.location.yCoordinate <= maxHeight) {
     carModel.location.yCoordinate = carModel.location.yCoordinate + 10;
+  }
+  if (y >= maxHeight) {
+    carModel.location.yCoordinate = maxHeight - 10;
+  }
+  if (x >= maxWidth) {
+    carModel.location.xCoordinate = maxWidth - 10;
+  }
+
+  if (carModel.location.yCoordinate <= 0) {
+    carModel.location.yCoordinate = 0;
+  }
+
+  if (carModel.location.xCoordinate <= 0) {
+    carModel.location.xCoordinate = 0;
   }
 
   $car.setAttribute('style', 'left:' + x + 'px;' + 'top:' + y + 'px;');

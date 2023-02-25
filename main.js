@@ -1,5 +1,6 @@
 const $chooseContainer = document.querySelector('.choose-container');
 const $hiddenCar = document.querySelectorAll('.racecar.hidden');
+console.log($hiddenCar);
 const $carContainer = document.querySelector('.carbox.hidden');
 const $body = document.querySelector('body');
 let $car;

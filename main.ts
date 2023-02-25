@@ -18,12 +18,13 @@ $chooseContainer.addEventListener('click', selectCar);
 function selectCar(event: MouseEvent) {
   if ((event.target as HTMLElement).tagName !== 'IMG') return;
   const $closest: HTMLElement = (event.target as HTMLElement).closest('IMG');
-  for (let i = 0; i < $hiddenCar.length; i++) {
-    if ($closest.dataset.id === ($hiddenCar[i] as HTMLElement).dataset.id) {
-      $hiddenCar[i].className = 'racecar';
-      $car = $hiddenCar[i] as HTMLElement;
+  $hiddenCar.forEach((element) => {
+    if ($closest.dataset.id === (element as HTMLElement).dataset.id) {
+      element.className = 'racecar';
+      $car = element as HTMLElement;
     }
-  }
+  })
+
   $chooseContainer.className = 'hidden';
   $carContainer.className = 'carbox';
   if ($closest.dataset.id === 'plane') {

@@ -34,16 +34,19 @@ button:hover {
 }
 
 .racecar-2 {
-  width: 45%;
+  width: 175px;
 }
 
 .racecar-2:hover {
   animation: 5s infinite rotate-ship linear;
+  cursor: pointer;
 }
 
 .racecar {
   width: 100px;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .up {
@@ -108,5 +111,11 @@ button:hover {
 @media (prefers-reduced-motion) {
   .racecar-2:hover {
     transform: scale(1.2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .racecar-2 {
+    width: 75px;
   }
 }

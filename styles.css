@@ -9,6 +9,22 @@ h1 {
   margin-bottom: 4rem;
 }
 
+button {
+  background: #fff;
+  font-size: 1.4rem;
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #000;
+  font-family: "Fira Code", monospace;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #fff6e3;
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
@@ -65,15 +81,6 @@ h1 {
 .button-div {
   text-align: right;
   margin: 1rem;
-}
-
-button {
-  background: #fff;
-  font-size: 1.4rem;
-  border: 0;
-  padding: 0.5rem;
-  border-radius: 8px;
-  color: #60a6a6;
 }
 
 @keyframes rotate-ship {

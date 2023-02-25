@@ -44,13 +44,13 @@ function changeScreen(event) {
         element.setAttribute('style', 'left: 0px;' + 'top: 0px;');
         element.className = 'racecar hidden';
     });
-    carModel.location.xCoordinate = 0;
-    carModel.location.yCoordinate = 0;
+    carModel.location = { xCoordinate: 0, yCoordinate: 0 };
     carModel.carMoving = false;
     carModel.direction = 'right';
     $chooseContainer.className = 'choose-container';
     $carContainer.className = 'carbox hidden';
     $body.className = '';
+    clearInterval(timer);
 }
 window.addEventListener('keydown', changeDirection);
 function changeDirection(event) {

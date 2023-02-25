@@ -40,4 +40,36 @@ describe('index.html', () => {
       }) }
   })
 
+  describe('CarModel', () => {
+    for (let i = 0; i < keyBoardEvents.length; i++) {
+
+      it(`should updatecarmodel when cardirection is ${keyBoardEvents[i]}`, () => {
+        const carModel = {
+          direction: 'right',
+          location: {
+            xCoordinate: 0,
+            yCoordinate: 0
+          },
+          carMoving: false
+        };
+
+        const event = { code: keyBoardEvents[i] };
+        if (event.code === 'ArrowLeft') {
+          carModel.direction = 'left';
+        }
+        if (event.code === 'ArrowRight') {
+          carModel.direction = 'right';
+        }
+        if (event.code === 'ArrowDown') {
+          carModel.direction = 'down';
+        }
+        if (event.code === 'ArrowUp') {
+          carModel.direction = 'up';
+        }
+        const direction = keyBoardEvents[i].split('Arrow');
+        expect(carModel.direction).equal(direction[1].toLowerCase());
+      })
+    }
+
+  })
 })

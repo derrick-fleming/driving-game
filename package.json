@@ -4,10 +4,12 @@
   "private": true,
   "description": "An HTML, CSS, and JavaScript driving game.",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "mocha 'test/*.js'"
   },
   "devDependencies": {
     "@types/node": "^18.14.1",
+    "chai": "^4.3.7",
     "eslint": "^8.22.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-html": "^7.1.0",
@@ -17,6 +19,8 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "markuplint": "^2.10.1",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.1",
     "stylelint": "^14.10.0",
     "stylelint-config-recommended": "^9.0.0",
     "stylelint-config-standard": "^27.0.0",

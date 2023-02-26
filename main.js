@@ -1,6 +1,5 @@
 const $chooseContainer = document.querySelector('.choose-container');
 const $hiddenCar = document.querySelectorAll('.racecar.hidden');
-console.log($hiddenCar);
 const $carContainer = document.querySelector('.carbox.hidden');
 const $body = document.querySelector('body');
 let $car;
@@ -18,12 +17,12 @@ function selectCar(event) {
     if (event.target.tagName !== 'IMG')
         return;
     const $closest = event.target.closest('IMG');
-    for (let i = 0; i < $hiddenCar.length; i++) {
-        if ($closest.dataset.id === $hiddenCar[i].dataset.id) {
-            $hiddenCar[i].className = 'racecar';
-            $car = $hiddenCar[i];
+    $hiddenCar.forEach((element) => {
+        if ($closest.dataset.id === element.dataset.id) {
+            element.className = 'racecar';
+            $car = element;
         }
-    }
+    });
     $chooseContainer.className = 'hidden';
     $carContainer.className = 'carbox';
     if ($closest.dataset.id === 'plane') {

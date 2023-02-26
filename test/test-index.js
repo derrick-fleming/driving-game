@@ -1,5 +1,4 @@
 const chai = require('chai');
-const sinon = require('sinon');
 const expect = chai.expect;
 const { JSDOM } = require('jsdom');
 chai.use(require('chai-dom'));
@@ -52,6 +51,11 @@ describe('index.html', () => {
     it('Nodelist should contain four elements of Racecars', () => {
       let $hiddenCar = document.querySelectorAll('.racecar.hidden');
       expect($hiddenCar.length).to.deep.equal(4);
+    })
+
+    it('Should return the correct tagName for the first selected element of hiddenCar', () => {
+      const $hiddenCar = document.querySelectorAll('.racecar.hidden');
+      expect($hiddenCar[0].tagName).to.equal('IMG');
     })
 
     for (let i = 0; i < ids.length; i++) {

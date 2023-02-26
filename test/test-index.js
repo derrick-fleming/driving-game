@@ -17,6 +17,17 @@ describe('index.html', () => {
       .then(done, done);
   });
 
+  describe('Container classes', () => {
+    it ('Should return correct tagname for choose-container', () => {
+      let $chooseContainer = document.querySelector('.choose-container');
+      expect($chooseContainer.tagName).to.equal('DIV');
+    });
+    it('Should return correct tagname for carbox', () => {
+      let $chooseContainer = document.querySelector('.carbox.hidden');
+      expect($chooseContainer.tagName).to.equal('DIV');
+    })
+  })
+
   describe('Body class', () => {
     const eventIds = [ 'plane', 'ship', 'dinghy'];
     const locations = ['sky', 'space', 'ocean'];
